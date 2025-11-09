@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos para SEO orientados al formulario de contacto -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tierra Media | Contacto</title>
+    <meta
+      name="description"
+      content="Formulario de contacto para enviar comentarios sobre el proyecto Tierra Media, la trilogía de El Señor de los Anillos y El Hobbit."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+
+    <!-- Bootstrap SOLO para navbar -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons para íconos de redes -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Fuentes usadas en SASS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos compilados desde SASS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+
+  <body class="theme-light">
+    <div class="site-wrapper">
+      <!-- 🧭 NAVBAR -->
+      <header class="tm-header">
+        <nav class="navbar navbar-expand-md navbar-dark tm-navbar">
+          <div class="container">
+            <a class="navbar-brand tm-logo" href="../index.html">
+              Tierra Media
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Alternar navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ms-auto tm-nav-list">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="esdla.html"
+                    >El Señor de los Anillos</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="hobbit.html">El Hobbit</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="personajes.html">Personajes</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="contacto.html"
+                    >Contacto</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- 💌 1) HERO DE CONTACTO -->
+        <section
+          class="tm-hero"
+          aria-labelledby="contact-hero-title"
+          style="
+            background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.82),
+                rgba(0, 0, 0, 0.45)
+              ),
+              url('../assets/img/heroContacto.jpeg');
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="tm-hero__overlay"></div>
+
+          <div class="tm-hero__content">
+            <div class="tm-hero__text">
+              <h1 id="contact-hero-title" class="tm-hero__title">
+                Contacto en la Tierra Media
+              </h1>
+              <p class="tm-hero__subtitle">
+                ¿Tienes comentarios sobre el proyecto, sugerencias de mejora o
+                simplemente quieres compartir tu pasión por la obra de
+                <strong>J.R.R. Tolkien</strong>? Envía tu mensaje y continúa el
+                viaje por la Tierra Media.
+              </p>
+              <div class="tm-hero__actions">
+                <a href="#contact-form" class="tm-btn tm-btn--primary">
+                  Ir al formulario
+                </a>
+                <a href="../index.html" class="tm-btn tm-btn--ghost">
+                  Volver al inicio
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 🧾 2) FORMULARIO DE CONTACTO -->
+        <section
+          class="tm-section tm-section--light"
+          aria-labelledby="contact-title"
+        >
+          <div class="tm-section__header">
+            <h2 id="contact-title" class="tm-section__title">
+              Enviar un mensaje desde la Comarca
+            </h2>
+            <p class="tm-section__subtitle">
+              Este formulario simula el envío de datos con fines académicos. Los
+              campos están etiquetados y pensados para practicar accesibilidad y
+              maquetación con SASS, Grid y Flexbox.
+            </p>
+          </div>
+
+          <form
+            id="contact-form"
+            class="tm-form"
+            action="#"
+            method="post"
+            novalidate
+          >
+            <div class="tm-form__group">
+              <label class="tm-form__label" for="name"> Nombre completo </label>
+              <input
+                class="tm-form__control"
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                placeholder="Escriba su nombre"
+              />
+              <small class="tm-form__help">
+                Este campo es obligatorio para saber cómo dirigirnos a ti.
+              </small>
+            </div>
+
+            <div class="tm-form__group">
+              <label class="tm-form__label" for="email">
+                Correo electrónico
+              </label>
+              <input
+                class="tm-form__control"
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                placeholder="nombre@ejemplo.com"
+              />
+              <small class="tm-form__help">
+                La dirección se utiliza únicamente como dato de demostración.
+              </small>
+            </div>
+
+            <div class="tm-form__group">
+              <label class="tm-form__label" for="topic">
+                Motivo del mensaje
+              </label>
+              <select
+                class="tm-form__control"
+                id="topic"
+                name="topic"
+                required
+                aria-required="true"
+              >
+                <option value="">Seleccione una opción</option>
+                <option value="consulta">Consulta general</option>
+                <option value="feedback">Sugerencia sobre el proyecto</option>
+                <option value="error">Notificación de error en el sitio</option>
+              </select>
+            </div>
+
+            <div class="tm-form__group">
+              <label class="tm-form__label" for="message"> Mensaje </label>
+              <textarea
+                class="tm-form__control tm-form__control--textarea"
+                id="message"
+                name="message"
+                rows="4"
+                required
+                aria-required="true"
+                placeholder="Comparta sus comentarios, ideas o mejoras..."
+              ></textarea>
+            </div>
+
+            <div class="tm-form__actions">
+              <button type="submit" class="tm-btn tm-btn--primary">
+                Enviar mensaje
+              </button>
+              <button type="reset" class="tm-btn tm-btn--ghost">
+                Limpiar formulario
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <!-- 🧿 FOOTER -->
+      <footer class="tm-footer">
+        <div class="tm-footer__inner">
+          <p class="tm-footer__copy">
+            &copy; <span id="tm-year"></span> Tierra Media · Desarrollado por
+            <strong>Ignacio Benjamín Piderit Guerrero</strong>
+          </p>
+          <ul class="tm-footer__social">
+            <li>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tm-footer__social-link"
+                aria-label="Instagram"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tm-footer__social-link"
+                aria-label="Facebook"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tm-footer__social-link"
+                aria-label="TikTok"
+              >
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Año dinámico -->
+    <script>
+      const yearSpan = document.getElementById("tm-year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

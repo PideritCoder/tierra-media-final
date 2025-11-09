@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos para SEO orientados a personajes principales -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tierra Media | Personajes principales</title>
+    <meta
+      name="description"
+      content="Personajes principales de la Tierra Media: hobbits, magos, hombres, elfos y enanos que marcan el destino del Anillo Único."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+
+    <!-- Bootstrap SOLO para navbar -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons para íconos de redes -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Fuentes usadas en SASS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos compilados desde SASS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+
+  <body class="theme-light">
+    <div class="site-wrapper">
+      <!-- NAVBAR -->
+      <header class="tm-header">
+        <nav class="navbar navbar-expand-md navbar-dark tm-navbar">
+          <div class="container">
+            <a class="navbar-brand tm-logo" href="../index.html">
+              Tierra Media
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Alternar navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ms-auto tm-nav-list">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="esdla.html">
+                    El Señor de los Anillos
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="hobbit.html">El Hobbit</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="personajes.html"
+                  >
+                    Personajes
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- 1) HERO DE PERSONAJES -->
+        <section
+          class="tm-hero"
+          aria-labelledby="characters-hero-title"
+          style="
+            background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.8),
+                rgba(0, 0, 0, 0.45)
+              ),
+              url('../assets/img/heroPersonajes.png');
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="tm-hero__overlay"></div>
+
+          <div class="tm-hero__content">
+            <div class="tm-hero__text">
+              <h1 id="characters-hero-title" class="tm-hero__title">
+                Personajes de la Tierra Media
+              </h1>
+              <p class="tm-hero__subtitle">
+                Hobbits, magos, hombres, elfos y enanos entrelazan sus destinos
+                alrededor del Anillo Único. Cada uno aporta una pieza esencial
+                al viaje que decidirá el futuro de la Tierra Media.
+              </p>
+              <div class="tm-hero__actions">
+                <a href="esdla.html" class="tm-btn tm-btn--primary">
+                  Ver trilogía El Señor de los Anillos
+                </a>
+                <a href="hobbit.html" class="tm-btn tm-btn--ghost">
+                  Ver trilogía El Hobbit
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2) GRID DE PERSONAJES PRINCIPALES -->
+        <section
+          class="tm-section tm-section--light"
+          aria-labelledby="characters-title"
+        >
+          <div class="tm-section__header">
+            <h2 id="characters-title" class="tm-section__title">
+              Compañeros de la Comunidad y más allá
+            </h2>
+            <p class="tm-section__subtitle">
+              Estos personajes representan distintos pueblos de la Tierra Media.
+              Sus decisiones, miedos y valentía definen el rumbo de la batalla
+              contra la oscuridad.
+            </p>
+          </div>
+
+          <div class="tm-grid tm-grid--characters">
+            <!-- Frodo -->
+            <article class="tm-character-card">
+              <div class="tm-character-card__image">
+                <img
+                  src="../assets/img/frodoBolson.png"
+                  alt="Frodo Bolsón"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-character-card__name">Frodo Bolsón</h3>
+              <p class="tm-character-card__role">
+                Hobbit · Portador del Anillo
+              </p>
+              <p class="tm-character-card__description">
+                Habitante de la Comarca que recibe la misión de llevar el Anillo
+                Único hasta Mordor. Su viaje refleja el peso del sacrificio y la
+                lucha interna contra la corrupción del poder.
+              </p>
+            </article>
+
+            <!-- Gandalf -->
+            <article class="tm-character-card">
+              <div class="tm-character-card__image">
+                <img
+                  src="../assets/img/gandalf.png"
+                  alt="Gandalf el Gris"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-character-card__name">Gandalf</h3>
+              <p class="tm-character-card__role">Mago</p>
+              <p class="tm-character-card__description">
+                Sabio y guía de los pueblos libres. Acompaña tanto a Bilbo como
+                a Frodo, y actúa como uno de los principales nexos entre los
+                sucesos de El Hobbit y El Señor de los Anillos.
+              </p>
+            </article>
+
+            <!-- Aragorn -->
+            <article class="tm-character-card">
+              <div class="tm-character-card__image">
+                <img
+                  src="../assets/img/aragorn.png"
+                  alt="Aragorn, heredero de Isildur"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-character-card__name">Aragorn</h3>
+              <p class="tm-character-card__role">
+                Dúnedain · Heredero de Isildur
+              </p>
+              <p class="tm-character-card__description">
+                Conocido primero como Trancos, pasa de ser un montaraz errante a
+                aceptar su destino como rey de Gondor. Simboliza el liderazgo
+                humilde y la restauración de los reinos de los hombres.
+              </p>
+            </article>
+
+            <!-- Legolas -->
+            <article class="tm-character-card">
+              <div class="tm-character-card__image">
+                <img
+                  src="../assets/img/legolas.png"
+                  alt="Legolas del Bosque Negro"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-character-card__name">Legolas</h3>
+              <p class="tm-character-card__role">
+                Elfo · Príncipe del Bosque Negro
+              </p>
+              <p class="tm-character-card__description">
+                Arquero excepcional que aporta la agilidad y la mirada élfica a
+                la Comunidad. Su amistad con Gimli rompe antiguas tensiones
+                entre elfos y enanos.
+              </p>
+            </article>
+
+            <!-- Gimli -->
+            <article class="tm-character-card">
+              <div class="tm-character-card__image">
+                <img
+                  src="../assets/img/gimli.png"
+                  alt="Gimli hijo de Glóin"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-character-card__name">Gimli</h3>
+              <p class="tm-character-card__role">Enano · Guerrero de Erebor</p>
+              <p class="tm-character-card__description">
+                Orgulloso guerrero enano que aporta fuerza y lealtad al grupo.
+                Su rivalidad inicial con Legolas se transforma en una de las
+                amistades más entrañables de la saga.
+              </p>
+            </article>
+
+            <!-- Bilbo -->
+            <article class="tm-character-card">
+              <div class="tm-character-card__image">
+                <img
+                  src="../assets/img/bilbo.png"
+                  alt="Bilbo Bolsón"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-character-card__name">Bilbo Bolsón</h3>
+              <p class="tm-character-card__role">
+                Hobbit · Aventurero inesperado
+              </p>
+              <p class="tm-character-card__description">
+                Protagonista de la aventura narrada en El Hobbit. El hallazgo
+                del Anillo en las profundidades de las Montañas Nubladas
+                desencadena, años más tarde, los sucesos de la Guerra del
+                Anillo.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3) ALIANZAS Y CONTRASTES -->
+        <section
+          class="tm-section tm-section--accent"
+          aria-labelledby="alliances-title"
+        >
+          <div class="tm-section__header">
+            <h2
+              id="alliances-title"
+              class="tm-section__title tm-section__title--inverse"
+            >
+              Alianzas, tentaciones y destinos cruzados
+            </h2>
+            <p class="tm-section__subtitle tm-section__subtitle--inverse">
+              La historia no solo se construye con batallas, sino también con
+              vínculos de amistad, decisiones difíciles y destinos que se
+              entrelazan a lo largo de toda la Tercera Edad.
+            </p>
+          </div>
+
+          <div class="tm-grid tm-grid--features">
+            <article class="tm-feature-card">
+              <div class="tm-feature-card__image">
+                <img
+                  src="../assets/img/legolasygimli.png"
+                  alt="Legolas y Gimli, amistad más allá de las razas"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-feature-card__title">
+                La amistad más allá de las razas
+              </h3>
+              <p class="tm-feature-card__text">
+                Legolas y Gimli superan antiguos prejuicios entre elfos y
+                enanos. Su evolución muestra cómo la confianza y el respeto
+                pueden nacer incluso en medio de la guerra.
+              </p>
+            </article>
+
+            <article class="tm-feature-card">
+              <div class="tm-feature-card__image">
+                <img
+                  src="../assets/img/bilboyfrodo.png"
+                  alt="Bilbo y Frodo portando el Anillo"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-feature-card__title">
+                La carga de los portadores del Anillo
+              </h3>
+              <p class="tm-feature-card__text">
+                Tanto Bilbo como Frodo experimentan el desgaste del Anillo
+                Único. Sus historias reflejan los efectos del poder absoluto
+                sobre personas aparentemente pequeñas y comunes.
+              </p>
+            </article>
+
+            <article class="tm-feature-card">
+              <div class="tm-feature-card__image">
+                <img
+                  src="../assets/img/gandalfyaragorn.png"
+                  alt="Aragorn, Gandalf y la batalla final"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="tm-feature-card__title">Liderazgo y sacrificio</h3>
+              <p class="tm-feature-card__text">
+                Gandalf, Aragorn y otros líderes eligen proteger a los más
+                débiles, incluso a costa de su propia seguridad. Sus decisiones
+                definen el curso de la Guerra del Anillo y el amanecer de una
+                nueva era.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="tm-footer">
+        <div class="tm-footer__inner">
+          <p class="tm-footer__copy">
+            &copy; <span id="tm-year"></span> Tierra Media · Desarrollado por
+            <strong>Ignacio Benjamín Piderit Guerrero</strong>
+          </p>
+          <ul class="tm-footer__social">
+            <li>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tm-footer__social-link"
+                aria-label="Instagram"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tm-footer__social-link"
+                aria-label="Facebook"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tm-footer__social-link"
+                aria-label="TikTok"
+              >
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Año dinámico -->
+    <script>
+      const yearSpan = document.getElementById("tm-year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

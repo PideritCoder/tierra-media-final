@@ -1,0 +1,122 @@
+// -----------------------------------------------------------------------------
+// Estilos base y elementos globales
+// Aquí se definen ajustes generales de tipografía, colores y reset suave.
+// -----------------------------------------------------------------------------
+
+@use "variables" as v;
+@use "mixins" as m;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: v.$tm-font-base;
+  color: v.$tm-color-text;
+  background-color: v.$tm-color-bg;
+  line-height: 1.6;
+}
+
+// Envoltura general del sitio para controlar min-height
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Cabecera
+.tm-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+}
+
+// Barra de navegación con estilos propios por encima de Bootstrap
+.tm-navbar {
+  background-color: rgba(5, 6, 8, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  .tm-logo {
+    font-family: v.$tm-font-heading;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+  }
+
+  .tm-nav-list .nav-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    &.active {
+      color: v.$tm-color-accent;
+    }
+
+    &:hover {
+      color: v.$tm-color-accent-soft;
+    }
+  }
+}
+
+// Secciones generales
+.tm-section {
+  padding-block: 3.5rem;
+
+  &--light {
+    background: radial-gradient(circle at top, #171b23 0, #050608 55%);
+  }
+
+  &--dark {
+    background-color: #050608;
+  }
+
+  &--accent {
+    background: radial-gradient(circle at top left, #b68b2d 0, #050608 65%);
+  }
+}
+
+// Títulos y subtítulos reutilizables
+.tm-section__header {
+  @include m.tm-container-max;
+  margin-bottom: 2rem;
+}
+
+.tm-section__title {
+  @include m.tm-heading(lg);
+  margin-bottom: 0.5rem;
+  color: v.$tm-color-accent-soft;
+
+  &--inverse {
+    color: #050608;
+  }
+}
+
+.tm-section__subtitle {
+  max-width: 40rem;
+  font-size: 0.98rem;
+  color: v.$tm-color-text-muted;
+
+  &--inverse {
+    color: #050608;
+    opacity: 0.85;
+  }
+}
+
+// Enlaces genéricos
+a {
+  color: v.$tm-color-accent;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

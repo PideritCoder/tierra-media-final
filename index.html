@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos para SEO y accesibilidad -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tierra Media | Inicio</title>
+    <meta
+      name="description"
+      content="Un viaje por la Tierra Media: explora El Señor de los Anillos y El Hobbit."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+    <!-- Bootstrap (uso acotado: solo navbar como componente principal) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons (solo para íconos de redes, no para maquetar) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Fuentes: Inter (texto) + Uncial Antiqua (títulos estilo Tierra Media) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos compilados desde SASS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+
+  <body class="theme-light">
+    <div class="site-wrapper">
+      <!-- ✅ Navbar Bootstrap (único gran componente Bootstrap aquí) -->
+      <header class="tm-header">
+        <nav class="navbar navbar-expand-md navbar-dark tm-navbar">
+          <div class="container">
+            <a class="navbar-brand tm-logo" href="index.html">Tierra Media</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Alternar navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ms-auto tm-nav-list">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/esdla.html">
+                    El Señor de los Anillos
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/hobbit.html">El Hobbit</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/personajes.html">
+                    Personajes
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- 1️⃣ HERO A PANTALLA CASI COMPLETA (con imagen LOCAL) -->
+        <section
+          class="tm-hero tm-hero--center"
+          style="
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.85),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('assets/img/heroIndex.jpg') center/cover no-repeat;
+            color: #fff;
+          "
+          aria-labelledby="hero-title"
+        >
+          <div class="tm-hero__text">
+            <h1 id="hero-title" class="tm-hero__title">
+              Un viaje por la Tierra Media
+            </h1>
+            <p class="tm-hero__subtitle">
+              Explora las tierras libres, los reinos de hombres, elfos y enanos,
+              y sigue la huella del Anillo Único a lo largo de la obra de J.R.R.
+              Tolkien y sus adaptaciones cinematográficas.
+            </p>
+            <div class="tm-hero__actions">
+              <a class="tm-btn tm-btn--primary" href="pages/esdla.html">
+                Ver El Señor de los Anillos
+              </a>
+              <a class="tm-btn tm-btn--ghost" href="pages/hobbit.html">
+                Ver El Hobbit
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2️⃣ Sección de video: banda sonora (video local al 70% de ancho mediante Grid + Flexbox definidos en SASS) -->
+        <section
+          class="tm-section tm-section--dark tm-video-section"
+          aria-labelledby="soundtrack-title"
+        >
+          <div class="tm-video-layout">
+            <header class="tm-section__header tm-video-header">
+              <h2
+                id="soundtrack-title"
+                class="tm-section__title tm-section__title--inverse"
+              >
+                Banda sonora de la Tierra Media
+              </h2>
+              <p class="tm-section__subtitle tm-section__subtitle--inverse">
+                Tema musical asociado al universo de
+                <strong>El Señor de los Anillos</strong>, compuesto por Howard
+                Shore. Acompaña visualmente el recorrido por la Tierra Media y
+                refuerza la atmósfera épica del sitio.
+              </p>
+            </header>
+
+            <div class="tm-video-wrapper">
+              <div class="tm-video-frame">
+                <video
+                  src="assets/video/videoInicial.mp4"
+                  controls
+                  preload="metadata"
+                  poster="assets/img/heroIndex.jpg"
+                >
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+            </div>
+
+            <p class="tm-video-comment">
+              Este video inicial relata la historia del surgimiento del poder de
+              los Anillos, el legado de los elfos, enanos y humanos, y cómo su
+              destino quedó entrelazado en la batalla por el dominio de la
+              Tierra Media.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3️⃣ INTRODUCCIÓN AL MUNDO DE EL SEÑOR DE LOS ANILLOS -->
+<section
+  class="tm-section tm-section--light"
+  aria-labelledby="intro-title"
+>
+  <div class="tm-section__header">
+    <h2 id="intro-title" class="tm-section__title">
+      Introducción al mundo de El Señor de los Anillos
+    </h2>
+    <p class="tm-section__subtitle">
+      Después del surgimiento del poder de los Anillos y de la corrupción que los
+      rodea, la Tierra Media entra en una etapa decisiva. Este fragmento introduce
+      el comienzo de la aventura que reunirá a hobbits, elfos, enanos y hombres
+      en torno a una misma misión: enfrentarse a la oscuridad que se alza desde
+      Mordor.
+    </p>
+  </div>
+
+  <div class="tm-video-layout">
+    <figure class="tm-intro-figure">
+      <video
+        src="assets/video/videoInicial2.mp4"
+        class="tm-intro-figure__video"
+        controls
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <figcaption class="tm-intro-figure__caption">
+        Este video retoma la historia tras el origen de los Anillos de Poder y
+        resume el comienzo del viaje que llevará a la formación de la Comunidad
+        del Anillo.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+
+
+      <!-- ✅ Footer sin utilidades Bootstrap: solo SASS propio -->
+      <footer class="tm-footer">
+        <div class="tm-footer__inner">
+          <p class="tm-footer__copy">
+            &copy; <span id="tm-year"></span> Tierra Media · Desarrollado por
+            <strong>Ignacio Benjamín Piderit Guerrero</strong>
+          </p>
+
+          <ul class="tm-footer__social">
+            <li>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="tm-footer__social-link"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="tm-footer__social-link"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                class="tm-footer__social-link"
+              >
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS (solo para el navbar hamburguesa) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Año dinámico en el footer -->
+    <script>
+      const yearSpan = document.getElementById("tm-year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

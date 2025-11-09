@@ -1,0 +1,276 @@
+// -----------------------------------------------------------------------------
+// Componentes reutilizables: tarjetas, botones y formulario.
+// -----------------------------------------------------------------------------
+
+@use "variables" as v;
+@use "mixins" as m;
+
+// -----------------------------------------------------------------------------
+// Botones principales
+// -----------------------------------------------------------------------------
+.tm-btn {
+  @include m.tm-button-base;
+
+  &--primary {
+    background-color: v.$tm-color-accent;
+    color: #050608;
+
+    &:hover {
+      background-color: darken(v.$tm-color-accent, 4%);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: v.$tm-color-accent-soft;
+    border-color: rgba(255, 255, 255, 0.25);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.06);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--inverse {
+    background-color: #050608;
+    color: v.$tm-color-accent-soft;
+
+    &:hover {
+      background-color: #101319;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Tarjeta de funcionalidad general (momentos clave, features)
+// -----------------------------------------------------------------------------
+.tm-feature-card {
+  border-radius: v.$tm-radius-md;
+  padding: 1.5rem 1.6rem;
+  background-color: v.$tm-color-surface;
+  border: 1px solid v.$tm-color-border;
+  @include m.tm-card-shadow;
+  transition: border-color 200ms ease, transform 200ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  overflow: hidden; // 🔹 si algo crece (hover), no se desborda de la tarjeta
+
+  // Contenedor específico para la imagen de la card
+  &__image {
+    width: 100%;
+    border-radius: v.$tm-radius-md;
+    overflow: hidden; // 🔹 recorta la imagen dentro del borde redondeado
+    margin-bottom: 0.6rem;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9; // proporción fija para todas
+      object-fit: cover; // recorta sin deformar
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    img:hover {
+      transform: scale(1.04); // pequeño zoom sin romper el layout
+    }
+  }
+
+  &__title {
+    @include m.tm-heading(md);
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: v.$tm-color-text-muted;
+  }
+
+  &:hover {
+    border-color: v.$tm-color-accent;
+    transform: translateY(-4px);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Tarjeta de película (ESDLA + Hobbit) con imagen recortada correctamente
+// -----------------------------------------------------------------------------
+.tm-movie-card {
+  border-radius: v.$tm-radius-md;
+  background-color: v.$tm-color-surface-alt;
+  border: 1px solid v.$tm-color-border;
+  @include m.tm-card-shadow;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  // Caja de la imagen: controla tamaño y evita desborde
+  &__image {
+    width: 100%;
+    aspect-ratio: 16 / 9; // todas las imágenes con la misma proporción
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // recorta sin deformar
+      object-position: center;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    img:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  // Contenido textual de la tarjeta
+  &__body {
+    padding: 1.5rem 1.6rem;
+  }
+
+  &__title {
+    @include m.tm-heading(md);
+    margin-bottom: 0.4rem;
+  }
+
+  &__meta {
+    font-size: 0.85rem;
+    color: v.$tm-color-text-muted;
+    margin-bottom: 0.75rem;
+
+    span + span::before {
+      content: "·";
+      margin-inline: 0.4rem;
+    }
+  }
+
+  &__text {
+    font-size: 0.94rem;
+    color: v.$tm-color-text-muted;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Tarjeta de personaje (con imagen controlada)
+// -----------------------------------------------------------------------------
+.tm-character-card {
+  border-radius: v.$tm-radius-md;
+  padding: 1.4rem 1.4rem 1.6rem;
+  background-color: v.$tm-color-surface;
+  border: 1px solid v.$tm-color-border;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  @include m.tm-card-shadow;
+  overflow: hidden; // nada se sale de la tarjeta
+
+  // Contenedor de imagen del personaje
+  &__image {
+    width: 100%;
+    border-radius: v.$tm-radius-md;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 220px; // altura homogénea para todas las fotos
+      object-fit: cover; // recorta sin deformar
+      object-position: center;
+      transition: transform 0.25s ease;
+    }
+
+    img:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  &__name {
+    @include m.tm-heading(md);
+    margin: 0;
+  }
+
+  &__role {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: v.$tm-color-accent-soft;
+  }
+
+  &__description {
+    font-size: 0.94rem;
+    color: v.$tm-color-text-muted;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Formulario de contacto
+// -----------------------------------------------------------------------------
+.tm-form {
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: 1.8rem 1.9rem;
+  border-radius: v.$tm-radius-lg;
+  background-color: v.$tm-color-surface;
+  border: 1px solid v.$tm-color-border;
+  @include m.tm-card-shadow;
+}
+
+.tm-form__group {
+  margin-bottom: 1.1rem;
+}
+
+.tm-form__label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.tm-form__control {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: v.$tm-radius-sm;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #050608;
+  color: v.$tm-color-text;
+  font-size: 0.9rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease,
+    background-color 200ms ease;
+
+  &--textarea {
+    resize: vertical;
+    min-height: 7rem;
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$tm-color-accent;
+    outline-offset: 2px;
+    border-color: v.$tm-color-accent;
+    box-shadow: 0 0 0 2px rgba(182, 139, 45, 0.25);
+  }
+
+  &:invalid {
+    border-left: 3px solid v.$tm-color-error;
+  }
+
+  &:required {
+    border-left: 3px solid rgba(182, 139, 45, 0.65);
+  }
+}
+
+.tm-form__help {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: v.$tm-color-text-muted;
+}
+
+.tm-form__actions {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}

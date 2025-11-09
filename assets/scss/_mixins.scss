@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// Mixins reutilizables
+// Definen patrones de estilo que se aplican en múltiples componentes, evitando
+// duplicación de código y facilitando ajustes globales.
+// -----------------------------------------------------------------------------
+
+@use "variables" as v;
+
+// Contenedor centrado con ancho máximo
+@mixin tm-container-max {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+// Sombra suave para tarjetas
+@mixin tm-card-shadow {
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+// Tipografía de títulos
+@mixin tm-heading($size) {
+  font-family: v.$tm-font-heading;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  @if $size == xl {
+    font-size: 2.5rem;
+  } @else if $size == lg {
+    font-size: 2rem;
+  } @else if $size == md {
+    font-size: 1.5rem;
+  } @else {
+    font-size: 1.25rem;
+  }
+}
+
+// Botón base
+@mixin tm-button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 160ms ease;
+}
+
+// Utilidad para truncar texto en una sola línea
+@mixin tm-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

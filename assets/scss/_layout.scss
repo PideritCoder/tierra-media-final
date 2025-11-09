@@ -1,0 +1,363 @@
+// -----------------------------------------------------------------------------
+// Layouts específicos: héroe, grillas y flexbox personalizados.
+// Se utiliza CSS nativo (Grid y Flexbox) para cumplir con la consigna.
+// -----------------------------------------------------------------------------
+
+@use "variables" as v;
+@use "mixins" as m;
+
+// -----------------------------------------------------------------------------
+// HERO GENERAL
+// -----------------------------------------------------------------------------
+.tm-hero {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center; // centrado vertical
+  color: v.$tm-color-text;
+  background-image: radial-gradient(circle at top left, #20263b 0, #050608 50%);
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 10% 20%,
+      rgba(182, 139, 45, 0.3),
+      transparent 55%
+    );
+    pointer-events: none;
+  }
+
+  &__content {
+    @include m.tm-container-max;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+    gap: 2.5rem;
+    padding-block: 3.5rem;
+  }
+
+  &__text {
+    align-self: center;
+    text-align: center; // centrado horizontal del texto
+  }
+
+  &__title {
+    @include m.tm-heading(xl);
+    margin-bottom: 0.75rem;
+  }
+
+  &__subtitle {
+    font-size: 1.02rem;
+    color: v.$tm-color-text-muted;
+    max-width: 32rem;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center; // botones centrados
+  }
+
+  &__card {
+    align-self: center;
+    padding: 1.6rem 1.8rem;
+    border-radius: v.$tm-radius-lg;
+    background-color: rgba(5, 6, 8, 0.92);
+    border: 1px solid rgba(182, 139, 45, 0.38);
+    @include m.tm-card-shadow;
+    transform: translateY(0);
+    transition: transform 200ms ease, box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+
+  &__card-title {
+    @include m.tm-heading(md);
+    margin-bottom: 0.75rem;
+  }
+
+  &__card-text {
+    font-size: 0.95rem;
+    color: v.$tm-color-text-muted;
+  }
+
+  &__card:hover {
+    transform: translateY(-6px);
+    border-color: v.$tm-color-accent;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// GRILLAS GENERALES
+// -----------------------------------------------------------------------------
+.tm-grid {
+  @include m.tm-container-max;
+  display: grid;
+  gap: 1.75rem;
+
+  &--features {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+
+  &--movies {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  &--characters {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+}
+
+// Contenedor flex genérico
+.tm-flex {
+  display: flex;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--gap {
+    gap: 1.5rem;
+  }
+}
+
+// Sección de llamada a la acción
+.tm-cta {
+  @include m.tm-container-max;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+// Listas
+.tm-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+
+  &--inverse {
+    color: #050608;
+
+    li::marker {
+      color: #050608;
+    }
+  }
+}
+
+// Lista ordenada específica
+.tm-order-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: v.$tm-color-accent-soft;
+}
+
+// -----------------------------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------------------------
+.tm-footer {
+  margin-top: auto;
+  padding-block: 1.8rem;
+  background-color: #050608;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  &__inner {
+    @include m.tm-container-max;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__copy {
+    font-size: 0.85rem;
+    color: v.$tm-color-text-muted;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__social-link {
+    font-size: 0.9rem;
+    color: v.$tm-color-text-muted;
+
+    &:hover {
+      color: v.$tm-color-accent-soft;
+      text-decoration: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Sección de video principal (home) – 70 % de ancho con Grid + Flexbox
+// -----------------------------------------------------------------------------
+.tm-video-section {
+  // recibe padding y fondo desde .tm-section
+}
+
+.tm-video-layout {
+  @include m.tm-container-max;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.tm-video-header {
+  text-align: center;
+}
+
+// Contenedor exterior: centra el bloque del video
+.tm-video-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+// Contenedor del video: aquí se aplica el 70 % de ancho
+.tm-video-frame {
+  width: 70%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  border-radius: v.$tm-radius-lg;
+  overflow: hidden;
+  @include m.tm-card-shadow;
+
+  // sirve tanto para <video> como para <iframe>
+  video,
+  iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border: 0;
+  }
+}
+
+// Comentario del video
+.tm-video-comment {
+  text-align: center;
+  max-width: 50rem;
+  margin: 1.5rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: v.$tm-color-text-muted;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+// -----------------------------------------------------------------------------
+// Intro de El Señor de los Anillos (segundo video en home)
+// Mantiene el video contenido y centrado, sin desbordes.
+// -----------------------------------------------------------------------------
+.tm-intro-figure {
+  @include m.tm-container-max;
+  max-width: 70%; // límite de ancho (~70% del viewport dentro del contenedor)
+  margin-inline: auto;
+  text-align: center;
+
+  &__video {
+    display: block;
+    width: 100%; // el video nunca será más ancho que su figura
+    height: auto;
+    border-radius: v.$tm-radius-lg;
+    @include m.tm-card-shadow;
+  }
+
+  &__caption {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: v.$tm-color-text-muted;
+    font-style: italic;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Grilla combinada imagen + texto para películas (usada en esdla.html)
+// -----------------------------------------------------------------------------
+.tm-grid-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  background-color: v.$tm-color-surface;
+  border: 1px solid v.$tm-color-border;
+  border-radius: v.$tm-radius-md;
+  overflow: hidden;
+  @include m.tm-card-shadow;
+  transition: transform 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6rem;
+    color: v.$tm-color-text;
+
+    h3 {
+      @include m.tm-heading(md);
+      color: v.$tm-color-accent-soft;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: v.$tm-color-text-muted;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Media queries para adaptación responsive
+// -----------------------------------------------------------------------------
+@media (max-width: v.$tm-breakpoint-md) {
+  .tm-hero__content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tm-hero__card {
+    order: -1;
+  }
+
+  // En pantallas pequeñas el video ocupa todo el ancho disponible
+  .tm-video-frame {
+    width: 100%;
+  }
+
+  .tm-intro-figure {
+    max-width: 100%;
+  }
+
+  // Grilla imagen + texto en una sola columna en móviles
+  .tm-grid-pair {
+    grid-template-columns: 1fr;
+  }
+}

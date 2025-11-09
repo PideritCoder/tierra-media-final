@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// Variables de diseño principales
+// Estas variables centralizan colores, tipografías y puntos de quiebre para
+// facilitar la personalización del tema desde un solo lugar.
+// -----------------------------------------------------------------------------
+
+$tm-font-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$tm-font-heading: "Uncial Antiqua", "Georgia", "Times New Roman", serif;
+
+
+// Paleta de colores principal
+$tm-color-bg: #050608;
+$tm-color-surface: #101319;
+$tm-color-surface-alt: #171b23;
+$tm-color-accent: #b68b2d;
+$tm-color-accent-soft: #f3e3ba;
+$tm-color-text: #f5f5f5;
+$tm-color-text-muted: #b0b5c0;
+$tm-color-border: #2a3040;
+
+// Estados
+$tm-color-success: #3fb984;
+$tm-color-error: #e45865;
+
+// Espaciado y dimensiones
+$tm-radius-sm: 0.4rem;
+$tm-radius-md: 0.8rem;
+$tm-radius-lg: 1.2rem;
+$tm-spacing-xs: 0.5rem;
+$tm-spacing-sm: 0.75rem;
+$tm-spacing-md: 1rem;
+$tm-spacing-lg: 1.5rem;
+$tm-spacing-xl: 2rem;
+
+// Puntos de quiebre para diseño responsive
+$tm-breakpoint-sm: 576px;
+$tm-breakpoint-md: 768px;
+$tm-breakpoint-lg: 992px;
+$tm-breakpoint-xl: 1200px;

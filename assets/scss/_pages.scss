@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Ajustes específicos por página cuando son necesarios.
+// Esto permite mantener los componentes genéricos en otros archivos.
+// -----------------------------------------------------------------------------
+
+@use "variables" as v;
+
+// Página de películas y listas
+.tm-order-list {
+  counter-reset: esdla-steps;
+
+  li {
+    counter-increment: esdla-steps;
+    margin-bottom: 0.45rem;
+
+    &::marker {
+      color: v.$tm-color-accent;
+      font-weight: 600;
+    }
+  }
+}
