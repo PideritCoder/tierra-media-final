@@ -7,3 +7,61 @@
 @use "layout";
 @use "components";
 @use "pages";
+
+// -------------------------------------------------------------
+// Ajuste responsive para iframes de video (YouTube, etc.)
+// → Usado en el primer video (banda sonora)
+// -------------------------------------------------------------
+
+.tm-video-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; // relación 16:9
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  max-width: 900px; // opcional, evita que se estire demasiado
+}
+
+.tm-video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+// -------------------------------------------------------------
+// Bloque exclusivo para el segundo video (Flexbox + proporción fija)
+// -------------------------------------------------------------
+
+.tm-video-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.tm-video-flex__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9; // mantiene la proporción perfecta
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.tm-video-flex__container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

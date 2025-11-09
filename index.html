@@ -121,7 +121,7 @@
           </div>
         </section>
 
-        <!-- 2️⃣ Sección de video: banda sonora (video local al 70% de ancho mediante Grid + Flexbox definidos en SASS) -->
+        <!-- 2️⃣ Sección de video: banda sonora -->
         <section
           class="tm-section tm-section--dark tm-video-section"
           aria-labelledby="soundtrack-title"
@@ -136,73 +136,71 @@
               </h2>
               <p class="tm-section__subtitle tm-section__subtitle--inverse">
                 Tema musical asociado al universo de
-                <strong>El Señor de los Anillos</strong>, compuesto por Howard
-                Shore. Acompaña visualmente el recorrido por la Tierra Media y
-                refuerza la atmósfera épica del sitio.
+                <strong>El Señor de los Anillos</strong>, inspirado en las
+                composiciones de Howard Shore. Acompaña visualmente el recorrido
+                por la Tierra Media y refuerza la atmósfera épica del sitio.
               </p>
             </header>
 
             <div class="tm-video-wrapper">
-              <div class="tm-video-frame">
-                <video
-                  src="assets/video/videoInicial.mp4"
-                  controls
-                  preload="metadata"
-                  poster="assets/img/heroIndex.jpg"
-                >
-                  Tu navegador no soporta la reproducción de video.
-                </video>
+              <div class="tm-video-frame tm-video-responsive">
+                <iframe
+                  src="https://www.youtube.com/embed/oDMB1lJsuX8"
+                  title="Concerning Hobbits - Cover Tierra Media"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
 
             <p class="tm-video-comment">
-              Este video inicial relata la historia del surgimiento del poder de
-              los Anillos, el legado de los elfos, enanos y humanos, y cómo su
-              destino quedó entrelazado en la batalla por el dominio de la
-              Tierra Media.
+              Este video inicial evoca la calma de la Comarca y el espíritu de
+              los hobbits antes de que la sombra de Sauron caiga sobre la Tierra
+              Media.
             </p>
           </div>
         </section>
 
         <!-- 3️⃣ INTRODUCCIÓN AL MUNDO DE EL SEÑOR DE LOS ANILLOS -->
-<section
-  class="tm-section tm-section--light"
-  aria-labelledby="intro-title"
->
-  <div class="tm-section__header">
-    <h2 id="intro-title" class="tm-section__title">
-      Introducción al mundo de El Señor de los Anillos
-    </h2>
-    <p class="tm-section__subtitle">
-      Después del surgimiento del poder de los Anillos y de la corrupción que los
-      rodea, la Tierra Media entra en una etapa decisiva. Este fragmento introduce
-      el comienzo de la aventura que reunirá a hobbits, elfos, enanos y hombres
-      en torno a una misma misión: enfrentarse a la oscuridad que se alza desde
-      Mordor.
-    </p>
-  </div>
+        <section
+          class="tm-section tm-section--light"
+          aria-labelledby="intro-title"
+        >
+          <div class="tm-section__header">
+            <h2 id="intro-title" class="tm-section__title">
+              Introducción al mundo de El Señor de los Anillos
+            </h2>
+            <p class="tm-section__subtitle">
+              Después del surgimiento del poder de los Anillos y de la corrupción que los
+              rodea, la Tierra Media entra en una etapa decisiva. Este fragmento introduce
+              el comienzo de la aventura que reunirá a hobbits, elfos, enanos y hombres
+              en torno a una misma misión: enfrentarse a la oscuridad que se alza desde
+              Mordor.
+            </p>
+          </div>
 
-  <div class="tm-video-layout">
-    <figure class="tm-intro-figure">
-      <video
-        src="assets/video/videoInicial2.mp4"
-        class="tm-intro-figure__video"
-        controls
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
-      <figcaption class="tm-intro-figure__caption">
-        Este video retoma la historia tras el origen de los Anillos de Poder y
-        resume el comienzo del viaje que llevará a la formación de la Comunidad
-        del Anillo.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-
+          <div class="tm-video-layout">
+            <figure class="tm-intro-figure">
+              <div class="tm-video-responsive">
+                <iframe
+                  class="tm-intro-figure__video"
+                  src="https://www.youtube.com/embed/GCjJaHWeKIg"
+                  title="Epic Orchestral Lord of the Rings Cover"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <figcaption class="tm-intro-figure__caption">
+                Esta pieza orquestal resume el tono épico de la Guerra del Anillo y
+                prepara el contexto para el viaje de la Comunidad.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
 
       <!-- ✅ Footer sin utilidades Bootstrap: solo SASS propio -->
       <footer class="tm-footer">
